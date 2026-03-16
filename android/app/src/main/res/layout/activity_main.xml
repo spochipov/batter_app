@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matrix_bg"
+    tools:context=".MainActivity">
+
+    <!-- Code input screen -->
+    <LinearLayout
+        android:id="@+id/screenCodeInput"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="48dp">
+
+            <TextView
+                android:id="@+id/cell0"
+                style="@style/CodeCell"
+                android:layout_marginEnd="8dp"/>
+            <TextView
+                android:id="@+id/cell1"
+                style="@style/CodeCell"
+                android:layout_marginEnd="8dp"/>
+            <TextView
+                android:id="@+id/cell2"
+                style="@style/CodeCell"
+                android:layout_marginEnd="8dp"/>
+            <TextView
+                android:id="@+id/cell3"
+                style="@style/CodeCell"
+                android:layout_marginEnd="8dp"/>
+            <TextView
+                android:id="@+id/cell4"
+                style="@style/CodeCell"
+                android:layout_marginEnd="8dp"/>
+            <TextView
+                android:id="@+id/cell5"
+                style="@style/CodeCell"/>
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="4"
+            android:alignmentMode="alignBounds">
+
+            <Button android:id="@+id/btn1" style="@style/KeyButton" android:text="1"/>
+            <Button android:id="@+id/btn2" style="@style/KeyButton" android:text="2"/>
+            <Button android:id="@+id/btn3" style="@style/KeyButton" android:text="3"/>
+            <Button android:id="@+id/btn4" style="@style/KeyButton" android:text="4"/>
+            <Button android:id="@+id/btn5" style="@style/KeyButton" android:text="5"/>
+            <Button android:id="@+id/btn6" style="@style/KeyButton" android:text="6"/>
+            <Button android:id="@+id/btn7" style="@style/KeyButton" android:text="7"/>
+            <Button android:id="@+id/btn8" style="@style/KeyButton" android:text="8"/>
+            <Button android:id="@+id/btn9" style="@style/KeyButton" android:text="9"/>
+            <Button android:id="@+id/btnBack" style="@style/KeyButton" android:text="⌫"/>
+            <Button android:id="@+id/btn0" style="@style/KeyButton" android:text="0"/>
+            <Button android:id="@+id/btnEnter" style="@style/KeyButton" android:text="✓"/>
+        </GridLayout>
+    </LinearLayout>
+
+    <!-- Matrix animation screen -->
+    <FrameLayout
+        android:id="@+id/screenMatrix"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.batterapp.matrixcode.view.MatrixRainView
+            android:id="@+id/matrixRainView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/matrixPhrase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="24dp"
+            android:textColor="@color/matrix_green"
+            android:textSize="22sp"
+            android:visibility="gone"
+            android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/btnCloseMatrix"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/close"
+            android:src="@drawable/ic_close"
+            android:scaleType="center"
+            app:tint="@color/white"/>
+    </FrameLayout>
+</FrameLayout>

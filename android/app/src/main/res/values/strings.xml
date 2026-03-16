@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Matrix Code</string>
+
+    <string name="matrix_phrase_1">Follow the white rabbit.</string>
+    <string name="matrix_phrase_2">There is no spoon.</string>
+    <string name="matrix_phrase_3">Welcome to the desert of the real.</string>
+    <string name="matrix_phrase_4">I know kung fu.</string>
+
+    <string name="close">Close</string>
+</resources>
