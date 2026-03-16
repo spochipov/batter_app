@@ -60,6 +60,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun setCellsBackground(drawableResId: Int) {
+        cells.forEach { it.setBackgroundResource(drawableResId) }
+    }
+
+    private fun showCodeError() {
+        setCellsBackground(R.drawable.code_cell_bg_error)
+        Toast.makeText(this, "Неверный код", Toast.LENGTH_SHORT).show()
+        binding.screenCodeInput.postDelayed({
+            setCellsBackground(R.drawable.code_cell_bg)
+            codeBuffer.clear()
+            updateCellsDisplay()
+        }, ERROR_DURATION_MS)
+    }
+
     private fun submitCode() {
         if (codeBuffer.length != 6) return
         val code = codeBuffer.toString()
@@ -67,9 +81,7 @@ class MainActivity : AppCompatActivity() {
         if (phraseResId != null) {
             showMatrixScreen(phraseResId)
         } else {
-            codeBuffer.clear()
-            updateCellsDisplay()
-            Toast.makeText(this, "Неверный код", Toast.LENGTH_SHORT).show()
+            showCodeError()
         }
     }
 
@@ -77,10 +89,15 @@ class MainActivity : AppCompatActivity() {
         binding.screenCodeInput.visibility = View.GONE
         binding.screenMatrix.visibility = View.VISIBLE
         binding.matrixPhrase.visibility = View.GONE
+        binding.matrixPhrase.alpha = 0f
         binding.matrixPhrase.text = getString(phraseResId)
 
         binding.matrixPhrase.postDelayed({
             binding.matrixPhrase.visibility = View.VISIBLE
+            binding.matrixPhrase.animate()
+                .alpha(1f)
+                .setDuration(PHRASE_FADE_DURATION_MS)
+                .start()
         }, PHRASE_DELAY_MS)
     }
 
@@ -93,5 +110,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val PHRASE_DELAY_MS = 3000L
+        private const val PHRASE_FADE_DURATION_MS = 2000L
+        private const val ERROR_DURATION_MS = 1500L
     }
 }

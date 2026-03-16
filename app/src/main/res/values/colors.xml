@@ -6,4 +6,5 @@
     <color name="matrix_bg">#FF000000</color>
     <color name="code_cell_bg">#1A2A1A</color>
     <color name="code_cell_text">#FF00FF41</color>
+    <color name="code_cell_error_stroke">#FFFF3333</color>
 </resources>

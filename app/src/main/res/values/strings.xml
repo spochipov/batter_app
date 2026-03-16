@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Matrix Code</string>
+    <string name="app_name">Batter Code</string>
 
-    <string name="matrix_phrase_1">Follow the white rabbit.</string>
-    <string name="matrix_phrase_2">There is no spoon.</string>
-    <string name="matrix_phrase_3">Welcome to the desert of the real.</string>
-    <string name="matrix_phrase_4">I know kung fu.</string>
+    <string name="matrix_phrase_1">Ты нашел артефакт! «Баттер-блок»
+Редкий экземпляр, мутировавший в Зоне из забытой пачки маргарина. Повышает дружелюбие, но оставляет жирные пятна на карманах.</string>
+    <string name="matrix_phrase_2">— Слышь, сталкер! Дай покурить, а? Ну пожалуйста! А хочешь, я тебе свою шапку дам? Мама вязала!</string>
+    <string name="matrix_phrase_3">— Это снова я, Сидорович. Короче, тут у ворот стоит какой-то улыбчивый парень в красно-синем свитере. Предлагает купить у него крышку от унитаза, утверждая, что это «Весёлый артефакт». Советую держаться от него подальше. Или сбагрить ему ржавый гвоздь по цене золота, он согласится.</string>
+    <string name="matrix_phrase_4">Внимание! Эта функция была написана специально для Баттера, поэтому она работает через раз. Если нажать сюда три раза, приложение громко скажет: «Айм соу сорри!» и попытается вылезти вон.</string>
 
     <string name="close">Close</string>
 </resources>

@@ -1,4 +1,4 @@
-# Matrix Code (Android)
+# Batter Code (Android)
 
 Приложение с вводом 6-значного кода и анимацией в стиле «Матрицы».
 

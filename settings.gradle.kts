@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MatrixCodeApp"
+rootProject.name = "BatterCodeApp"
 include(":app")
