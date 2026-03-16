@@ -1,20 +1,19 @@
 # Android
-android/build
-android/app/build
-android/.gradle
-android/local.properties
-android/*.iml
-android/.cxx
-android/captures
-android/*.apk
-android/*.ap_
-android/*.aab
-android/app/release
-android/app/debug
+build
+app/build
+.gradle
+local.properties
+*.iml
+.cxx
+captures
+*.apk
+*.ap_
+*.aab
+app/release
+app/debug
 
 # IDE
 .idea/
-*.iml
 *.ipr
 *.iws
 

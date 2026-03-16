@@ -16,7 +16,7 @@ class MatrixRainView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private val chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray()
+    private val chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ .,!?\";:()[]{}<>/|\\+-*=%#@&^~`".toCharArray()
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = 0xFF00FF41.toInt()
         textSize = 36f
@@ -85,7 +85,6 @@ class MatrixRainView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        val w = width.toFloat()
         val h = height.toFloat()
         columns.forEachIndexed { index, col ->
             val x = index * columnWidth
