@@ -27,4 +27,36 @@
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
     </style>
+
+    <style name="SettingsLabel" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:textColor">@color/code_cell_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SettingsCodeEdit" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@drawable/code_cell_bg</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">6</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/code_cell_text</item>
+        <item name="android:textColorHint">#8000FF41</item>
+    </style>
+
+    <style name="SettingsPhraseEdit" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:background">@drawable/code_cell_bg</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:minLines">2</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/code_cell_text</item>
+        <item name="android:textColorHint">#8000FF41</item>
+    </style>
 </resources>

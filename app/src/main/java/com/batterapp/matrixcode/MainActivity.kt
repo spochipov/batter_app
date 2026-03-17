@@ -1,16 +1,18 @@
 package com.batterapp.matrixcode
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.batterapp.matrixcode.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var settingsRepository: SettingsRepository
     private val cells: List<TextView> by lazy {
         listOf(
             binding.cell0, binding.cell1, binding.cell2,
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        settingsRepository = SettingsRepository(this)
 
         digitButtons.forEachIndexed { index, btn ->
             btn.setOnClickListener { appendDigit(index.toString()) }
@@ -65,32 +68,47 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showCodeError() {
-        setCellsBackground(R.drawable.code_cell_bg_error)
-        Toast.makeText(this, "Неверный код", Toast.LENGTH_SHORT).show()
-        binding.screenCodeInput.postDelayed({
-            setCellsBackground(R.drawable.code_cell_bg)
-            codeBuffer.clear()
-            updateCellsDisplay()
-        }, ERROR_DURATION_MS)
+        binding.codeInputLoading.visibility = View.VISIBLE
+        binding.codeInputLoading.postDelayed({
+            if (!isFinishing) {
+                binding.codeInputLoading.visibility = View.GONE
+                setCellsBackground(R.drawable.code_cell_bg_error)
+                AlertDialog.Builder(this)
+                    .setMessage(R.string.error_wrong_code)
+                    .setPositiveButton(R.string.ok) { _, _ ->
+                        setCellsBackground(R.drawable.code_cell_bg)
+                        codeBuffer.clear()
+                        updateCellsDisplay()
+                    }
+                    .setCancelable(false)
+                    .show()
+            }
+        }, LOADING_DURATION_MS)
     }
 
     private fun submitCode() {
         if (codeBuffer.length != 6) return
         val code = codeBuffer.toString()
-        val phraseResId = Codes.getPhraseResIdForCode(code)
-        if (phraseResId != null) {
-            showMatrixScreen(phraseResId)
+        if (code == settingsRepository.getMasterPassword()) {
+            codeBuffer.clear()
+            updateCellsDisplay()
+            startActivity(Intent(this, SettingsActivity::class.java))
+            return
+        }
+        val phrase = settingsRepository.getPhraseForCode(code)
+        if (phrase != null) {
+            showMatrixScreen(phrase)
         } else {
             showCodeError()
         }
     }
 
-    private fun showMatrixScreen(phraseResId: Int) {
+    private fun showMatrixScreen(phrase: String) {
         binding.screenCodeInput.visibility = View.GONE
         binding.screenMatrix.visibility = View.VISIBLE
         binding.matrixPhrase.visibility = View.GONE
         binding.matrixPhrase.alpha = 0f
-        binding.matrixPhrase.text = getString(phraseResId)
+        binding.matrixPhrase.text = phrase
 
         binding.matrixPhrase.postDelayed({
             binding.matrixPhrase.visibility = View.VISIBLE
@@ -111,6 +129,6 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private const val PHRASE_DELAY_MS = 3000L
         private const val PHRASE_FADE_DURATION_MS = 2000L
-        private const val ERROR_DURATION_MS = 1500L
+        private const val LOADING_DURATION_MS = 2000L
     }
 }

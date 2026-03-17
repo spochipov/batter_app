@@ -18,6 +18,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BatterCodeApp"/>
+        <activity
+            android:name=".MasterPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BatterCodeApp"/>
+        <activity
+            android:name=".CodesListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BatterCodeApp"/>
+        <activity
+            android:name=".EditCodeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BatterCodeApp"/>
     </application>
 
 </manifest>

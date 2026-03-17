@@ -22,3 +22,8 @@ APK: `app/build/outputs/apk/debug/app-debug.apk`.
 - `999888` → фраза 4  
 
 Шаблоны фраз задаются в `app/src/main/res/values/strings.xml` (`matrix_phrase_1` … `matrix_phrase_4`).
+
+## Документация
+
+- Руководство пользователя: [MANUAL_USER.md](MANUAL_USER.md)
+- Руководство администратора: [MANUAL_ADMIN.md](MANUAL_ADMIN.md)

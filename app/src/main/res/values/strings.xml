@@ -8,5 +8,42 @@
     <string name="matrix_phrase_3">— Это снова я, Сидорович. Короче, тут у ворот стоит какой-то улыбчивый парень в красно-синем свитере. Предлагает купить у него крышку от унитаза, утверждая, что это «Весёлый артефакт». Советую держаться от него подальше. Или сбагрить ему ржавый гвоздь по цене золота, он согласится.</string>
     <string name="matrix_phrase_4">Внимание! Эта функция была написана специально для Баттера, поэтому она работает через раз. Если нажать сюда три раза, приложение громко скажет: «Айм соу сорри!» и попытается вылезти вон.</string>
 
-    <string name="close">Close</string>
+    <string name="close">Закрыть</string>
+    <string name="back">Назад</string>
+    <string name="checking_code">Проверка…</string>
+    <string name="error_wrong_code">Неверный код. Введите код снова.</string>
+    <string name="ok">OK</string>
+
+    <string name="settings_title">Настройки</string>
+    <string name="settings_master_password">Мастер-пароль (6 цифр)</string>
+    <string name="settings_master_password_hint">000000</string>
+    <string name="settings_codes_phrases">Коды и фразы</string>
+    <string name="settings_code_1">Код 1</string>
+    <string name="settings_code_2">Код 2</string>
+    <string name="settings_code_3">Код 3</string>
+    <string name="settings_code_4">Код 4</string>
+    <string name="settings_phrase_1">Фраза 1</string>
+    <string name="settings_phrase_2">Фраза 2</string>
+    <string name="settings_phrase_3">Фраза 3</string>
+    <string name="settings_phrase_4">Фраза 4</string>
+    <string name="settings_save">Сохранить</string>
+    <string name="settings_saved">Настройки сохранены</string>
+    <string name="settings_error_codes">Все коды должны быть ровно 6 цифр</string>
+    <string name="settings_error_master">Мастер-пароль: 6 цифр</string>
+    <string name="settings_master_password_menu">Мастер-пароль</string>
+    <string name="settings_add_code">+ Добавить код</string>
+    <string name="settings_code_label">Код (6 цифр)</string>
+    <string name="settings_phrase_label">Фраза (от 3 до 10000 символов)</string>
+    <string name="settings_status_active">активен</string>
+    <string name="settings_status_inactive">выкл</string>
+    <string name="settings_phrase_min_max">Фраза: от 3 до 10000 символов</string>
+    <string name="settings_code_deleted">Код удалён</string>
+    <string name="settings_code_updated">Код обновлён</string>
+    <string name="settings_code_active_switch">Код активен</string>
+    <string name="settings_swipe_hint_delete">Удалить</string>
+    <string name="settings_swipe_hint_deactivate">Деактивировать</string>
+    <string name="settings_swipe_hint_activate">Включить</string>
+    <string name="settings_delete_confirm">Удалить код %1$s?</string>
+    <string name="settings_delete_yes">Удалить</string>
+    <string name="settings_delete_no">Отмена</string>
 </resources>

@@ -70,6 +70,39 @@
         </GridLayout>
     </LinearLayout>
 
+    <!-- Loading overlay on code screen (wrong code) -->
+    <FrameLayout
+        android:id="@+id/codeInputLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#E6000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/matrix_green"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/checking_code"
+                android:textColor="@color/matrix_green"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </FrameLayout>
+
     <!-- Matrix animation screen -->
     <FrameLayout
         android:id="@+id/screenMatrix"

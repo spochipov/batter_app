@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matrix_bg"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_title"
+        android:textColor="@color/matrix_green"
+        android:textSize="22sp"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnMasterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/settings_master_password_menu"
+        android:textColor="@color/matrix_green"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/matrix_green"/>
+
+    <Button
+        android:id="@+id/btnCodesPhrases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/settings_codes_phrases"
+        android:textColor="@color/matrix_green"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/matrix_green"/>
+
+    <Button
+        android:id="@+id/btnBackSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/close"
+        android:textColor="@color/code_cell_text"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+</LinearLayout>

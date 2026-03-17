@@ -7,4 +7,7 @@
     <color name="code_cell_bg">#1A2A1A</color>
     <color name="code_cell_text">#FF00FF41</color>
     <color name="code_cell_error_stroke">#FFFF3333</color>
+    <color name="icon_blue_tape">#FF1565C0</color>
+    <color name="swipe_bg_delete">#CCCC0000</color>
+    <color name="swipe_bg_deactivate">#CCFF8800</color>
 </resources>
