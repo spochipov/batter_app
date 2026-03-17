@@ -39,7 +39,7 @@ class CodesAdapter(
     inner class ViewHolder(private val binding: ItemCodePhraseBinding) : RecyclerView.ViewHolder(binding.root) {
         init {
             binding.itemForeground.setOnClickListener {
-                val pos = adapterPosition
+                val pos = bindingAdapterPosition
                 if (pos != RecyclerView.NO_POSITION) onItemClick(pos)
             }
         }
